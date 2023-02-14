@@ -5,9 +5,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     echo "Asia/Shanghai" > /etc/timezone && \
     update-ca-certificates && \
     apk del tzdata && \
-    docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ --with-webp=/usr/include/ && \
-    docker-php-ext-install gd sockets pcntl pdo_mysql mysqli gmp zip bcmath && \
-    pecl install redis && \
+    # docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ --with-webp=/usr/include/ && \
+    docker-php-ext-install sockets pcntl pdo_mysql mysqli gmp zip bcmath
+
+RUN pecl install redis && \
     pecl install amqp && \
     pecl install mongodb && \
     docker-php-ext-enable redis amqp mongodb opcache
