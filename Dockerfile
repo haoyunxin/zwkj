@@ -21,5 +21,5 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 	mv ./composer.phar /usr/bin/composer && \
 	composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
-VOLUME /wwwroot
-WORKDIR /wwwroot
+VOLUME /var/www
+WORKDIR /var/www
