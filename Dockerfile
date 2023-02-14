@@ -1,4 +1,4 @@
-FROM php:7.3.33-fpm-alpine
+FROM php:7.3.9-fpm-alpine
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk add zip libzip-dev libpng-dev autoconf build-base libevent-dev gcc libc-dev libwebp-dev libjpeg-turbo-dev jpeg-dev freetype-dev make g++ rabbitmq-c-dev libsodium-dev libmcrypt-dev gmp-dev libpq-dev libmemcached-dev ca-certificates openssl-dev --no-cache && \
     apk update && apk add tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
